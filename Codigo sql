@@ -1,0 +1,19 @@
+CREATE TABLE pokemon (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(50),
+  tipo VARCHAR(50),
+  nivel INTEGER
+);
+
+CREATE TABLE treinador (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(50),
+  cidade VARCHAR(50)
+);
+
+CREATE TABLE captura (
+  treinador_id INTEGER treinador(id),
+  pokemon_id INTEGER pokemon(id),
+  data_captura DATE,
+  PRIMARY KEY (treinador_id, pokemon_id)
+);
